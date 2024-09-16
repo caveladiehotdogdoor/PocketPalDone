@@ -1,0 +1,113 @@
+[<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase</title>
+</head>
+<body> 
+<div id="home"><a href="index.html"><img src="back.png" width="10%"></a></div>
+<div id="ok"><p>Home</p></div>
+
+    <h1>Purchase Product</h1>
+<div id="opt1"><p>Colour Option</p></div> 
+<br>
+
+<div class="image-container">
+    <section id="b1" class="clickable-image">
+        <br><br><br><br><br><br><br> <br> 
+    </section>
+    <section id="b2" class="clickable-image">
+        <br><br><br><br><br><br><br> <br> 
+    </section>
+
+   <class id="other">
+    <section id="b3" class="clickable-image">
+        <br><br><br><br><br><br><br> <br> 
+    </section>  
+    <section id="b4" class="clickable-image">
+        <br><br><br><br><br><br><br> <br> 
+    </section>
+   </class>
+</div>
+  
+<script src="script.js"></script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.clickable-image');
+    
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            images.forEach(img => img.classList.remove('active'));
+            image.classList.add('active');
+        });
+    });
+});</script>
+
+<br><p></p><br>
+<p></p>
+<div id="input1"><p>Full Name</p> </div>
+<textarea id="freeform" name="freeform" rows="1" cols="50"> </textarea>  
+<p></p>
+<div id="input2"><p>Year Level</p> </div>
+
+<div id="qty-input">
+    <input  type="number" name="product-qty" min="7" max="13" value="1" > </div>
+<p></p>
+<div id="input3"><p>Whanau</p> </div>
+<textarea id="freeform" name="freeform" rows="1" cols="50"> </textarea>  
+<br>
+<div id="enter"><button id="orderButton"><p></p> Order<p></p></button></div>
+
+<p id="message" class="hidden">Thank you for purchasing, we hope you enjoy! Please bring $10 to school and meet 
+    at the <br><br>red square at break one the next day to collect your order.</p>
+
+
+<script>
+    document.getElementById('orderButton').addEventListener('click', () => {
+            const message = document.getElementById('message');
+            message.classList.remove('hidden');
+        });
+    ;
+</script>
+
+
+
+
+    <style>
+#ok {color: #266075; position: absolute; top: 3%; left: 5%;}
+p {color: #266075;}
+h1 {color: #266075; text-align: center; font-size: 500%; }
+#opt1 {color: #266075; font-size: 300%; text-align: center; }
+body {background-color: #a89331; line-height: 100%;}
+
+#b1 {background-color: black; width: 10%;float: right;margin-right: 60%;}
+#b2 {background-color: #303082; width: 10%; margin-left: 20%;}
+#b3 {position: absolute; top: 37%; left: 60%; background-color: black; width: 10%;}
+#b4 {position: absolute; top: 37%; left: 70%; background-color: black; width: 10%;}
+
+.clickable-image {
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border 0.3s ease;}
+.clickable-image.active {
+    border: 4px solid #ef5834;}
+
+#freeform { display: inline-block;} 
+#input1 {display: inline-block; font-size: 170%; margin-left: 5%; margin-right: 2%;}
+
+#input2 {display: inline-block; font-size: 170%; margin-left: 5%; margin-right: 2%;}
+#qty-input {display: inline-block;}
+#input3 {display: inline-block; font-size: 170%; margin-left: 5%; margin-right: 2%;}
+button {background-color: #ef5834; width: 10%; font-size: 120%;}
+#enter {text-align: center;}
+
+.hidden {
+        display: none;
+    }
+    #message {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 160%; }
+        
+
+
